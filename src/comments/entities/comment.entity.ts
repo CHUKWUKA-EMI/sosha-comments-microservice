@@ -2,6 +2,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  Index,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -11,6 +12,7 @@ export class Comment {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Index()
   @Column({ nullable: false })
   userId: string;
 
@@ -26,6 +28,7 @@ export class Comment {
   @Column({ nullable: true })
   userImageUrl?: string;
 
+  @Index()
   @Column({ nullable: false })
   postId: string;
 
